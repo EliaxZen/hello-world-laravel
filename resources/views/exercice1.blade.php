@@ -16,7 +16,7 @@
             align-items: center;
             ">
         @foreach ($pessoas as $pessoa)
-            @include('components.card_pessoa', ['pessoa' => $pessoa])
+            @include('components.card_pessoa', $pessoa)
         @endforeach
     </div>
 </body>
