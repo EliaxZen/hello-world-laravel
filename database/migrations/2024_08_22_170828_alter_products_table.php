@@ -11,7 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::table('products', function (Blueprint $table) {
+            $table->integer('min_quantity') //Noma da coluna
+            ->default(1) //Valor default
+            ->after('quantity'); //Onde ela vai ficar no banco de dados.
+        });
     }
 
     /**
@@ -19,6 +23,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        //Faz a exclusão dessa coluna
+        Schema::table('products', function (Blueprint $table) {
+            $table->dropColumn('min_quantity');
+        });
     }
 };
