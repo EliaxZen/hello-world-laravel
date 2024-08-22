@@ -23,6 +23,9 @@ return new class extends Migration
             
             //Quantidade do produto - () - int - por default quantidade = 0\
             $table->integer('quantity')->default(0);
+
+            //Observações sobre o produto - text - pode ser null
+            $table->text('obs')->nullable();
             
             $table->timestamps();
         });
@@ -33,6 +36,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('products');
     }
 };
