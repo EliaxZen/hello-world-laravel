@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::table('products', function (Blueprint $table) {
             $table->integer('min_quantity') //Noma da coluna
-            ->default(1) //Valor default
-            ->after('quantity'); //Onde ela vai ficar no banco de dados.
+                ->default(1) //Valor default
+                ->after('quantity'); //Onde ela vai ficar no banco de dados.
         });
     }
 
